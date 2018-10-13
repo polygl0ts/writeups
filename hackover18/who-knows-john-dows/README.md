@@ -13,8 +13,7 @@ alternative: http://46.101.157.142:4567/login
 
 ## Solution
 
-[The first
-[link](https://github.com/h18johndoe/user_repository/blob/master/user_repo.rb)
+[The first link](https://github.com/h18johndoe/user_repository/blob/master/user_repo.rb)
 points to a Ruby script in a GitHub repository that seems to handle logins
 for the challenge website. The script is vulnerable to SQL injection.
 
