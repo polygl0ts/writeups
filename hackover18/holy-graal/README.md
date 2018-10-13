@@ -65,8 +65,7 @@ The server is running a Clojure script that checks that the input has balanced
 brackets. The script works by reading a line and then passing the result to
 `read-string`, then reporting an error if any exceptions are thrown.
 
-From [the documentation of `read-string`](https://clojuredocs.org/clojure.core
-/read-string):
+From [the documentation of read-string](https://clojuredocs.org/clojure.core/read-string):
 
 ```
 Reads one object from the string s. Optionally include reader
