@@ -1,4 +1,4 @@
-# Square CTF 2018 - C2: flipping bits
+# Square CTF 2018 - C1: dot-n-dash
 
 ## Description
 The instructions to disable C1 were considered restricted. As a result, they were stored only in encoded form.
