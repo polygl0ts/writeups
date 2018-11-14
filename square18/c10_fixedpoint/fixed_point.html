@@ -1,0 +1,72 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+  body > * {
+    margin-top: 5rem;
+  }
+  body {
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    width: 500px;
+  }
+  div {
+    flex: 1 0;
+    align-items: flex-end;
+  }
+  textarea {
+    width: 100%;
+    flex: 5 0;
+    height: 10rem;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>🌗 🚀 👽 📡 🌓</h1>
+    <p>Find <i>x</i>, such that ƒ(<i>x</i>) = <i>x</i></p>
+    <textarea id="input" value="" type="text" onInput="check()"></textarea>
+    <div id="result"></div>
+  </div>
+<script>
+function check() {
+  var i = input.value.replace(/\s/g, '');
+  if (i == "") {
+    result.innerText = "";
+  } else {
+    var t = f(i);
+    if (t == i) {
+      result.innerText = "good!";
+    } else {
+      result.innerText = "bad! (" + t + " != " + i + ")";
+    }
+  }
+}
+
+function f(x) {
+  if ((x.substr(0, 2) == '🚀') && (x.slice(-2) == '🚀')) {
+    return x.slice(2, -2);
+  }
+  if (x.substr(0, 2) == '👽') {
+    return '🚀' + f(x.slice(2));
+  }
+  if (x.substr(0, 2) == '📡') {
+    return f(x.slice(2)).match(/..|/g).reverse().join("");
+  }
+  if (x.substr(0, 2) == '🌗') {
+    return f(x.slice(2)).repeat(5);
+  }
+  if (x.substr(0, 2) == '🌓') {
+    var t = f(x.slice(2));
+    return t.substr(0, t.length/2);
+  }
+
+  return "";
+}
+</script>
+
+<!-- puzzle by Alok + Matb -->
+
+</body>
+</html>
