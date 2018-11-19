@@ -69,7 +69,7 @@ struct gets_info {
 };
 
 unsigned int numPerson;
-struct person p[10];
+struct person *p[10];
 
 void printPerson(struct person *my_p)
 {
@@ -83,13 +83,13 @@ void createPerson(void)
 		puts("No more person for you.");
 	} else {
 		p[numPerson] = malloc(12);
-		p[numPerson].print_fn = printPerson;
+		p[numPerson]->print_fn = printPerson;
 	}
 }
 
 void deletePerson(unsigned int i)
 {
-	free(p[i].name);
+	free(p[i]->name);
 	free(p[i]);
 }
 
