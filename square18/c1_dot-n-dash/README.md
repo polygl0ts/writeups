@@ -82,4 +82,4 @@ Congrats, you solved C1! The flag is flag-bd38908e375c643d03c6.
 ```
 
 ## Code
-You can find the sage script we used to get the flag [here](./flag.sage).
+You can find the script we used to get the flag [here](./flag.py).
