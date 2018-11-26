@@ -130,9 +130,9 @@ If we send `t+"}"+cccc....cccc+"aa"`, (`c` is the padding character) we will hav
 block 1, block 2, block 3
 `t+"}"+cccc....cccc, "aa" + flag[0:30], flag[31]+"}"+ccccccccccccc`
 
-Then we will just have to test all possible  ascci character for `t` and compare the ciphertexts of the block 1 and the block 3 if they are equals. 
+Then we will just have to test all possible  ascii characters for `t` and compare the ciphertexts of the block 1 and the block 3 if they are equals. 
 
-Afterward we iterate over the next unknown character. 
+Afterward we iterate to the next unknown character. 
 
 The code below implement this attack
 ```
@@ -156,6 +156,11 @@ for i in range(31):
 
 print("The flag is: " + flag)
 ```
+
+
+### Full Code
+
+The full code is available [here](https://github.com/ctf-epfl/writeups/blob/master/tuctf18/AESential%20Lesson/flag.py).
 
 ### Flag
 
