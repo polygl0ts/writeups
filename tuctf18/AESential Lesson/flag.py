@@ -41,4 +41,4 @@ for i in range(31):
 		conn.recvline()
 
 print("The flag is: " + flag)
-flag = ""
+flag = "TUCTF{A3S_3CB_1S_VULN3R4BL3!!!!}"
