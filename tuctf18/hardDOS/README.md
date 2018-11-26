@@ -6,7 +6,7 @@ Paying attention is mitey important! (Difficulty: Hard)
 nc 18.216.100.42 12345
 
 ## Solution
-The solution is similar to the one of [easyDOS](../easyDOS), we have to find the correct commands and arguments.
+This challenge is similar to [easyDOS](../easyDOS), we have to find the correct commands and arguments.
 
 Also in this case we have to answer some questions before reaching the real challenge.
 
@@ -18,7 +18,7 @@ Let's just pick one of them.
 
 Of course yes!
 
-Now real challenge starts. Apparently `THE MITE` is giving us some hints.
+Now the real challenge starts. Apparently `THE MITE` is giving us some hints.
 
 `"THE MITE: First thing's first. What's even in here?"`
 
@@ -40,4 +40,4 @@ So `GRAPHICS.COM` is the file we are interested in. Eventually one of us tried t
 [flag.py](./flag.py)
 
 ## Cascade
-Note that the server was infected by [Cascade](http://malware.wikia.com/wiki/Cascade). Once connected, we only had three minutes before it its.
+Note that the server was infected by [Cascade](http://malware.wikia.com/wiki/Cascade). Once connected, we only had three minutes before it hits.

@@ -39,7 +39,7 @@ if __name__ == '__main__':
     print s
 ```
 
-The string returned by the `main` function seems to be a reverse base64 string.
+The string returned by the `main` function seems to be a reversed base64 string.
 
 Looking at the decompiled code, the first function in the file is `reverse`, the second one `b32decode`. First we conclude that it's actually base32 and not base64. But, more importantly, it seems that applying the functions in the same order as they appear on the file will decode the string.
 

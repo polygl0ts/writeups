@@ -19,7 +19,7 @@ The given python script does the following:
 - xor the secret with the key
 - save the resulting string into `flag` and `secret`
 
-Now we know what are the other two files we are given.
+So we know what are the other two files we are given.
 
 The first and only working idea we had was to xor the two files.
 

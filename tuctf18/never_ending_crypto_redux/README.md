@@ -18,7 +18,7 @@ Just morse code.
 Morse code and [rot13](https://en.wikipedia.org/wiki/ROT13).
 
 ### Level 2
-This time the ciphertext is not valid morse code. Hopefully seeing it next to the ciphertext of `Level 0` pointed me in the correct direction: we had to replace `.` with `-` and vice versa (from now this I'll call this operation "flip"). Doing that we obtain the morse code
+This time the ciphertext is not valid morse code. Hopefully seeing it next to the ciphertext of `Level 0` pointed me in the correct direction: we had to replace `.` with `-` and vice versa (from now on I'll call this operation "flip"). Doing that we obtain the morse code.
 
 ### Level 3
 This was probably the trickiest level. Our plaintext is divide in three buffers based on modulo 3 of the character index. In other words, the indexes will be divided as below.
@@ -34,7 +34,7 @@ Then the three buffers are concatenated `a + b + c`.
 Let's call this operation "mix". To win this level we decode the morse and mix.
 
 ### Level 4
-We add rot13, i.e. morse, mix and rot13.
+We add rot13 to `level 3`, i.e. morse, mix and rot13.
 
 ### Level 5
 Again a combination of the previous levels: flip, morse, mix and rot13.
@@ -45,7 +45,7 @@ Here some letters were encoded in the same one, which made me think the message 
 Nevertheless, once decoded with the key we also have to apply rot13.
 
 ### Level 7
-First of all we notice that this should be last level:
+This is the last level!
 
 `You're good! But are you good enough
 to beat this FINAL CHALLENGE?!!!!`
