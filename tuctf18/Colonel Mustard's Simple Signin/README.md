@@ -11,7 +11,7 @@ http://13.59.239.132/
 
 The website is just a login page. When trying inputs we notices that it is weak to SQL injection.
 
-So we input `' or '1' = '1` in both the user and password textfield. (this SQL injection works in the password textfiled)
+So we input `' or '1' = '1` in both the user and password textfield. (this SQL injection works in the password textfield)
 
 We are redirected to the page with the flag:
 
