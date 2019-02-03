@@ -13,6 +13,7 @@ The server sent us a `png` image in hexadecimal. We have to solve the captcha an
 This challenge need to be solved 120 times out of 200 tries to output the flag.
 
 The image is a concatenation of 4 characters from the Bill Cipher (a code in Gravity Fall).
+![The code mapping](gravityfallsdecode.png)
 
 This is the harder problem of [Captcha Forest](../Captcha-forest)
 
@@ -24,11 +25,11 @@ The difference is that the image have rotation and scaling over the characters.
 
 ## Solution
 
-This is a similiar solution as the previous one. We had the luck to find good enough character to match the code.
+This is a similiar solution as the previous one. We had the luck to find good enough character to match the code. [source](https://www.dcode.fr/gravity-falls-bill-cipher)
 
 Instead of just testing our mapping symbol with the captcha, we combine it with multiple rotations and scalings.
 
-With a family of 30 different rotations {-45, -42, ..., 0 , 3, ... 45} and 5 different scaling, we reach around 95% of accuracy in the captcha. It is enough to recover the flag.
+With a family of 30 different rotations {-45, -42, ..., 0 , 3, ... 45} and 5 different scalings, we reach around 95% of accuracy in the captcha. It is enough to recover the flag.
 
 ## Code
 

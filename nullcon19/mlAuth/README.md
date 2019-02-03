@@ -21,7 +21,7 @@ If the link doesn't work: [Python script](get_prob.py), [Keras model](keras_mode
 
 ## Solution
 
-We have to find a vector of 784 hex value that will output us a model probability > 0.99.
+We have to find a vector of 784 hex values that will output a model probability greater than 0.99.
 
 Since ML is just basically a lot of linear combinations of inputs, we can do a probability descent using the `keras_model` provided: at each step we modify the best index with the best value that will maximize the output probability.
 Note that we could reach a local minima but didn't found any with this technique.
