@@ -20,9 +20,12 @@ def findTextImg(image):
 	currentImage = image
 	minVal = 1000
 	minElem = ""
+	# check every symbol of the alphabet
 	for i, elem in enumerate(alphabet):
 		symbol = symbolImage[i]
+		# do the absolute difference with the image
 		val = np.sum(np.absolute(np.subtract(currentImage,symbol)))
+		# choose the best symbol
 		if val < minVal:
 			minVal = val
 			minElem = elem
