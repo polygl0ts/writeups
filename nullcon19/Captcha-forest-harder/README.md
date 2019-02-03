@@ -17,7 +17,7 @@ The image is a concatenation of 4 characters from the Bill Cipher (a code in Gra
 
 This is the harder problem of [Captcha Forest](../Captcha-forest)
 
-The difference is that the image have rotation and scaling over the characters.
+The difference is that the image has rotation and scaling over the characters.
 
 #### Example of Captcha with rotation and scaling
 
