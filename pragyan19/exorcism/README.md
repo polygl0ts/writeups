@@ -27,7 +27,7 @@ for line in f:
 f.close()
 ```
 
-At this point I was a bit lazy: I printed the output directly on the terminal, took a screenshot and modified the height with GIMP (the image was elongated). Scanning the resulting [QR-code](./exorxism.png) gave me `160f15011d1b095339595138535f135613595e1a`.
+At this point I was a bit lazy: I printed the output directly on the terminal, took a screenshot and modified the height with GIMP (the image was elongated). Scanning the resulting [QR-code](./exorcism.png) gave me `160f15011d1b095339595138535f135613595e1a`.
 
 Given the name of the challenge, my idea was to `xor` the above string (after hex-decoding it) with the flag prefix (i.e. `pctf{`), which gave me `flagf`. So let's try to `xor` it with `flag`:
 
