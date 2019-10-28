@@ -8,6 +8,7 @@ Collection of writeups from the [polygl0ts](https://ctf.epfl.ch/) CTF team.
 - [nullcon HackIM 2019](https://ctftime.org/event/741): [writeups](nullcon19)
 - [tamu CTF 2019](https://ctftime.org/event/740): [writeups](tamu19)
 - [Pragyan CTF 2019](https://ctftime.org/event/755): [writeups](pragyan19)
+- [TastelessCTF 2019](https://ctftime.org/event/872) : [writeups](tasteless19)
 
 ### 2018
 
