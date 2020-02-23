@@ -107,15 +107,9 @@ Since `username` is located on the stack we could smash the stack and overwrite
 the return address of the function with one of our choosing to take control of
 the program. However while that works, there is also an easier way: let's have a
 look at the function's stack frame layout to see what we would be overflowing
-into (the highest memory address is at the top):
+into:
 
-```
-s32        Stack[0x4]:4   argc
-s8 **      Stack[0x8]:4   argv
-s8[32]     Stack[-0x2c]   flag
-s8[16]     Stack[-0x3c]   username
-s8[16]     Stack[-0x4c]   password
-```
+[!Stack frame of module_main](stack.svg)
 
 `flag` is located immediately after `username`, and `username` is printed right
 after our call to `getline`. C strings are null-terminated and if we fill
@@ -192,11 +186,12 @@ cpu_state_t *syscall_handler(cpu_state_t *state)
 ```
 
 Ok, that seems pretty easy! We only have to invoke syscall 0x37 from userspace
-and the kernel will print out the flag. But how do we do that? On Linux userspace
-programs invoke syscalls by putting the arguments in the right registers, the
-syscall number in `eax`, and executing the `int 0x80` instruction. One way to
-find out is to disassemble the login program and look for the functions that
-invoke system calls.
+and the kernel will print out the flag. But how do we do that? On 32-bit x86
+Linux userspace programs invoke syscalls by putting the arguments in the right
+registers, the syscall number in `eax`, and executing the `int 0x80`
+instruction. But what about this custom OS? One way to find out is to
+disassemble the login program and look for the functions that invoke system
+calls.
 
 ```
 void __cdecl kcon_puts(s8 * s)
@@ -210,13 +205,13 @@ ret
 
 ```
 
-This looks very similar to how system calls work on Linux, except it uses
-`int 0x30` instead of `int 0x80`. We already know that `eax` holds the system
-call number because we saw that the syscall handler switches on the value of
-`eax`. Our target system call does not take any arguments so we don't need to
-worry about those for now. All we have to do is set eax to 0x37 and execute
-`int 0x30` from userspace. Therefore our next step is to find a vulnerability
-in `login` that lets us execute arbitrary code in userspace.
+This looks very similar to how system calls work on 32-bit x86 Linux, except it
+uses `int 0x30` instead of `int 0x80`. We already know that `eax` holds the
+system call number because we saw that the syscall handler switches on the value
+of `eax`. Our target system call does not take any arguments so we don't need to
+worry about those for now. All we have to do is set eax to 0x37 and execute `int
+0x30` from userspace. Therefore our next step is to find a vulnerability in
+`login` that lets us execute arbitrary code in userspace.
 
 ```c
 s32 module_main(s32 argc,s8 **argv)
@@ -312,10 +307,13 @@ cpu_state_t *syscall_handler(cpu_state_t *state)
 }
 ```
 
-It is no longer possible to get the flag directly from the kernel so we will
-have to find another way. We do not need to get full code execution in the
-kernel, we simply need to be able to read its memory. We can still use the
-exploit from part 2 to see where the flag is stored in memory:
+`cmdline` still contains the command line of the kernel which contains the flag,
+just like in the previous challenge. However it is no longer possible to ask the
+kernel to print its content, only its address. We will have to find another way
+to read out the flag. We do not need to get full code execution in the kernel,
+we simply need to be able to read its memory. We can still use the exploit from
+part 2 to see where the flag is stored in memory:
+
 ```
 [+] Opening connection to pwn.flagbot.ch on port 8072: Done
 [*] Switching to interactive mode
@@ -533,3 +531,5 @@ weekend of the CTF and only managed to solve pwn challenges and one reverse.
 I'm sure the other categories would have been great fun too. Still, we got first
 blood on all 3 levels of this task and we are the only team who solved part 3,
 so I'm not disappointed.
+
+Thanks to Specter for feedback on this writeup.
