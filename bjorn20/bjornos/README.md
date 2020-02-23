@@ -109,7 +109,7 @@ the program. However while that works, there is also an easier way: let's have a
 look at the function's stack frame layout to see what we would be overflowing
 into:
 
-[!Stack frame of module_main](stack.svg)
+![Stack frame of module_main](stack.svg)
 
 `flag` is located immediately after `username`, and `username` is printed right
 after our call to `getline`. C strings are null-terminated and if we fill
