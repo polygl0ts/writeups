@@ -3,6 +3,9 @@ Writeups
 
 Collection of writeups from the [polygl0ts](https://ctf.epfl.ch/) CTF team.
 
+### 2022
+- [Insomnihack 2022](https://ctftime.org/event/1506): [writeups](ins22)
+
 ### 2020
 - [BjörnCTF 2020](https://ctf.flagbot.ch/): [writeups](bjorn20)
 
