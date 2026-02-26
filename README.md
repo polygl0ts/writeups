@@ -3,6 +3,8 @@ Writeups
 
 Collection of writeups from the [polygl0ts](https://ctf.epfl.ch/) CTF team.
 
+FIXME: Stale as opposed to https://polygl0ts.ch/writeups.html / https://github.com/polygl0ts/polygl0ts.github.io/tree/main/_writeups
+
 ### 2020
 - [BjörnCTF 2020](https://ctf.flagbot.ch/): [writeups](bjorn20)
 
